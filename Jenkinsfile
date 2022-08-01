@@ -18,8 +18,7 @@ pipeline {
         sh '''apk add --no-cache --virtual .build-deps build-base linux-headers 
    
 '''
-        sh '''apk add --update --no-cache         redis 
-	py3-cffi py3-paramiko
+        sh '''apk add --update --no-cache         redis py3-paramiko
         py3-flask py3-jinja2         py3-markupsafe         py3-lxml '''
         sh 'pip install -r requirements.txt'
         sh 'python ./netconf\\ menu/menu.py'
