@@ -13,7 +13,7 @@ pipeline {
         sh 'apk add py3-pip'
         sh 'apk add --update alpine-sdk'
         sh 'pip install --upgrade pip setuptools wheel'
-        sh 'apk add --no-cache jpeg-dev zlib-dev'
+        sh 'apk add --no-cache jpeg-dev zlib-dev libffi-dev'
         sh '''apk add --no-cache --virtual .build-deps build-base linux-headers 
    
 '''
