@@ -15,7 +15,7 @@ pipeline {
         redis python3 py3-cffi py3-paramiko py3-flask py3-jinja2 py3-markupsafe py3-lxml'''
         sh 'python3 -m ensurepip'
         sh ' pip3 install -U pip'
-        sh '''apk add --update --no-cache         redis py3-paramiko
+        sh '''apk add --update --no-cache py3-paramiko
         py3-flask py3-jinja2         py3-markupsafe         py3-lxml '''
         sh 'pip install -r requirements.txt'
         sh 'python ./netconf\\ menu/menu.py'
