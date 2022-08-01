@@ -15,7 +15,7 @@ pipeline {
         sh 'python3 -m ensurepip'
         sh ' pip3 install -U pip'
         sh 'pip install -r requirements.txt'
-        sh 'python3 ./netconf\\ menu/menu.py'
+        sh 'python3 ./netconf\\ menu/menu.py &'
         sh 'python3 ./netconf\\ menu/tests.py &'
       }
     }
