@@ -13,8 +13,10 @@ pipeline {
         sh 'apk add py3-pip'
         sh 'apk add --update alpine-sdk'
         sh 'pip install --upgrade pip setuptools wheel'
-        sh 'apk add --update --no-cache g++ gcc libxml2-dev libxslt-dev python-dev libffi-dev  make'
-        sh 'apk add --no-cache libressl-dev musl-dev libffi-dev'
+        sh 'apk add --no-cache jpeg-dev zlib-dev'
+        sh '''apk add --no-cache --virtual .build-deps build-base linux-headers 
+    && pip install Pillow
+'''
         sh 'pip install -r requirements.txt'
         sh 'python ./netconf\\ menu/menu.py'
         sh 'python ./netconf\\ menu/tests.py &'
