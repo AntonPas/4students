@@ -29,7 +29,7 @@ pipeline {
       steps {
         echo "${env.NODE_NAME}"
         sh 'ls ./netconf\\ menu/'
-        sh 'uname -a'
+        sh 'pip3 install PyNaCl'
         sh 'python ./netconf\\ menu/tests.py'
       }
     }
