@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import unittest
-import main
+import menu
 import random
 
 rand=random.randrange(1000)
@@ -8,8 +8,8 @@ rand=random.randrange(1000)
 class Tests(unittest.TestCase):
 
     def setUp(self):
-        main.app.testing = True
-        self.app = main.app.test_client()
+        menu.app.testing = True
+        self.app = menu.app.test_client()
         
 
     def test_home(self):
