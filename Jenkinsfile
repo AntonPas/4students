@@ -28,7 +28,7 @@ pipeline {
       }
       steps {
         echo "${env.NODE_NAME}"
-        sh 'python3 ./netconf\\ menu/tests.py &'
+        sh 'python3 ./netconf\\ menu/tests.py'
       }
     }
 
