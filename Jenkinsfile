@@ -10,17 +10,18 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building..'
-        sh 'apk add py3-pip'
+        sh '''apk add py3-pip
+'''
         sh 'apk add --update alpine-sdk'
         sh 'pip install --upgrade pip setuptools wheel'
         sh 'apk add --no-cache jpeg-dev zlib-dev libffi-dev'
         sh '''apk add --no-cache --virtual .build-deps build-base linux-headers 
    
 '''
+        sh 'pip install Pillow'
         sh 'pip install -r requirements.txt'
         sh 'python ./netconf\\ menu/menu.py'
         sh 'python ./netconf\\ menu/tests.py &'
-        sh 'pip install Pillow'
       }
     }
 
