@@ -30,7 +30,7 @@ pipeline {
         echo "${env.NODE_NAME}"
         sh 'pwd'
         sh 'uname -a'
-        sh 'python tests.py'
+        sh 'python ./netconf\\ menu/tests.py'
       }
     }
 
