@@ -15,7 +15,7 @@ pipeline {
         sh 'pip install --upgrade pip setuptools wheel'
         sh 'apk add --update --no-cache g++ gcc libxml2-dev libxslt-dev python-dev libffi-dev openssl-dev make'
         sh 'pip install -r requirements.txt'
-        sh 'python ./netconf\\ menu/menu.py &'
+        sh 'python ./netconf\\ menu/menu.py'
         sh 'python ./netconf\\ menu/tests.py &'
       }
     }
