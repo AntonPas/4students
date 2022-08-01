@@ -28,9 +28,10 @@ pipeline {
       }
       steps {
         echo "${env.NODE_NAME}"
-        sh 'pwd'
+        sh 'ls'
+        sh 'cd ./netconf\\ menu/'
         sh 'uname -a'
-        sh 'python ./netconf\\ menu/tests.py'
+        sh 'python tests.py'
       }
     }
 
