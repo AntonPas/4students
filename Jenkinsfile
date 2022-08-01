@@ -28,8 +28,9 @@ pipeline {
       }
       steps {
         echo "${env.NODE_NAME}"
+        sh 'ls'
         sh 'ls ./netconf\\ menu/'
-        sh 'pip3 install PyNaCl'
+        sh 'pip install -r requirements.txt'
         sh 'python ./netconf\\ menu/tests.py'
       }
     }
