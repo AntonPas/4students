@@ -16,7 +16,6 @@ pipeline {
         sh ' pip3 install -U pip'
         sh 'pip install -r requirements.txt'
         sh 'python3 ./netconf\\ menu/menu.py &'
-        sh 'python3 ./netconf\\ menu/tests.py &'
       }
     }
 
@@ -29,7 +28,7 @@ pipeline {
       }
       steps {
         echo "${env.NODE_NAME}"
-        sh 'python3 ./netconf\\ menu/tests.py'
+        sh 'python3 ./netconf\\ menu/tests.py &'
       }
     }
 
