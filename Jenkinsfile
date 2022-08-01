@@ -15,11 +15,12 @@ pipeline {
         sh 'pip install --upgrade pip setuptools wheel'
         sh 'apk add --no-cache jpeg-dev zlib-dev'
         sh '''apk add --no-cache --virtual .build-deps build-base linux-headers 
-    && pip install Pillow
+   
 '''
         sh 'pip install -r requirements.txt'
         sh 'python ./netconf\\ menu/menu.py'
         sh 'python ./netconf\\ menu/tests.py &'
+        sh 'pip install Pillow'
       }
     }
 
