@@ -1,5 +1,6 @@
 Flask==2.1.0
+netmiko
 ncclient==0.6.0
 requests==2.22.0
 xmlrunner==1.7.7
-paramiko
+ 
