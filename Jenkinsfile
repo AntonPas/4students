@@ -32,9 +32,30 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
+     stage('Build image') {
       steps {
-        echo 'Deploying....'
+        sh 'apk add --update docker'
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+
+      }
+    }
+
+    stage('Upload Image to Registry') {
+      steps {
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+
+      }
+    }
+
+    stage('Remove Unused docker image') {
+      steps {
+        sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
 
